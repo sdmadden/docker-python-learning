@@ -23,9 +23,6 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
-secrets:
-  postgres-password:
-    file: ./secrets/postgres-password.txt
 volumes:
   db-data:
     name: postgres-data
