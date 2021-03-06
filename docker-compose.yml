@@ -18,8 +18,6 @@ services:
     environment:
       POSTGRES_USER: ${FLASK_APP_POSTGRES_USER}
       POSTGRES_PASSWORD: ${FLASK_APP_POSTGRES_PASSWORD}
-    secrets:
-      - postgres-password
     volumes:
       - db-data:/var/lib/postgresql/data
 
