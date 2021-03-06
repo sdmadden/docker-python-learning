@@ -13,6 +13,7 @@ Deactivate the virtual environment
 ```bash
 deactivate
 ```
+
 # Docker
 Build docker image
 ```bash
@@ -46,6 +47,29 @@ Run bash in docker container
 sudo docker exec -it flask-test bash
 ```
 
+# Docker Compose
+Start docker-compose
+`sudo docker-compose up -d`
+
+Start docker-compose in dev
+`sudo docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d`
+
+Stop docker-compose in dev
+`sudo docker-compose -f docker-compose.yml -f docker-compose.dev.yml down`
+
 # Web
 View site
 `http://localhost:5000`
+
+# PGAdmin
+View site
+`http://localhost:5454`
+
+Make sure to connect to database on `db.hostname` from `docker-compose.yml`
+`postgres-host`
+
+# Environment Variables
+- FLASK_APP_PGADMIN_DEFAULT_EMAIL
+- FLASK_APP_PGADMIN_DEFAULT_PASSWORD
+- FLASK_APP_POSTGRES_USER
+- FLASK_APP_POSTGRES_PASSWORD

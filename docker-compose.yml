@@ -1,0 +1,34 @@
+services:
+  web:
+    container_name: flask
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - ./app:/app
+    environment:
+      FLASK_ENV: development
+  db:
+    container_name: postgres
+    hostname: postgres-host
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${FLASK_APP_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${FLASK_APP_POSTGRES_PASSWORD}
+    secrets:
+      - postgres-password
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+secrets:
+  postgres-password:
+    file: ./secrets/postgres-password.txt
+volumes:
+  db-data:
+    name: postgres-data
+networks:
+  default:
+    name: app-network
