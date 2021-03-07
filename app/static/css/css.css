@@ -1,0 +1,51 @@
+body {
+  background-color: #ccc;
+  font-family: tahoma;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: [one] 200px [two] 50px [three];
+  grid-template-rows: [one] 40px [two] auto [three];
+  grid-template-areas:
+    "name id"
+    "fruit fruit";
+  width: 250px;
+  border: 2px solid black;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.user .id {
+  grid-area: id;
+  justify-self: center;
+  align-self: center;
+}
+
+.user .name {
+  grid-area: name;
+  justify-self: left;
+  align-self: center;
+  padding-left: 20px;
+}
+
+.user .fruit {
+  grid-area: fruit;
+  justify-self: stretch;
+  align-self: center;
+  text-align: center;
+  border-top: 2px solid black;
+  padding: 10px;
+}
+
+.orange {
+  background-color: orangered;
+}
+
+.banana {
+  background-color: yellow;
+}
+
+.apple {
+  background-color: #66ccff;
+}

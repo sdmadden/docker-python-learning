@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/css.css">
+  </head>
+  <body>
+    {% for user in users %}
+      <div class="user">
+        <div class="id">
+          {{ user.id }}
+        </div>
+        <div class="name">
+          {{ user.name }}
+        </div>
+        <div class="fruit {{ user.get_fruit() }}">
+          {{ user.get_fruit() }}
+        </div>
+      </div>
+    {% endfor %}
+    {% include 'partials/footer.html' %}
+  </body>
+<html>

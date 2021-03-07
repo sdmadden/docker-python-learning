@@ -14,6 +14,11 @@ Deactivate the virtual environment
 deactivate
 ```
 
+Freeze requirements
+```bash
+pip freeze > requirements.txt
+```
+
 # Docker
 Build docker image
 ```bash
@@ -88,3 +93,11 @@ Default settings from `app/settings/default_settings.cfg`
 Environment specific settings from `app/settings/environment_settings.cfg` will override any default settings.
 
 Need to restart flask container (`sudo docker restart flask`) to pick up setting changes
+
+# Database
+Set up database (from inside `flask` container)
+```bash
+flask db init
+flask db migrate
+flask db upgrade
+```
